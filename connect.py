@@ -5,7 +5,7 @@ host = {
     "host" : "cisco3.lasthop.io",
     "username": "pyclass",
     "password": getpass(),
-    "device_type" : "cisco_ios"
+    "device_type" : "cisco_xe"
 }
 
 connect = ConnectHandler(**host)
