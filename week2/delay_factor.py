@@ -13,8 +13,11 @@ host =    {
 
 nc = ConnectHandler(**host)
 
-print(f"Time sending command: {datetime.now().isoformat()}")
+before = datetime.now()
+print(f"Time sending command: {before.isoformat()}")
 print(nc.send_command("show lldp neighbors detail"))
-print(f"Time after command: {datetime.now().isoformat()}")
+after = datetime.now()
+print(f"Time after command: {after.isoformat()}")
+print(f"Execution time : {(after - before).strftime("%S.%f")}")
 
 nc.disconnect()
