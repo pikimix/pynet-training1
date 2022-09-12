@@ -11,27 +11,28 @@ host = {
 nc = ConnectHandler(**host)
 output = ""
 output += nc.send_command("ping", expect_string=r":",
-                                strip_prompt=False, strip_command=False)
+                          strip_prompt=False, strip_command=False)
 #Protocol [ip]:
 output += nc.send_command("", expect_string=r":",
-                                strip_prompt=False, strip_command=False)
+                          strip_prompt=False, strip_command=False)
 #Target IP address:
 output += nc.send_command("8.8.8.8", expect_string=r":",
-                                strip_prompt=False, strip_command=False)
+                          strip_prompt=False, strip_command=False)
 #Repeat count [5]:
 output += nc.send_command("", expect_string=r":",
-                                strip_prompt=False, strip_command=False)
+                          strip_prompt=False, strip_command=False)
 #Datagram size [100]:
 output += nc.send_command("", expect_string=r":",
-                                strip_prompt=False, strip_command=False)
+                          strip_prompt=False, strip_command=False)
 #Timeout in seconds [2]:
 output += nc.send_command("", expect_string=r":",
-                                strip_prompt=False, strip_command=False)
+                          strip_prompt=False, strip_command=False)
 #Extended commands [n]:
-output += nc.send_command("", strip_prompt=False, strip_command=False)
+output += nc.send_command("", expect_string=r":",
+                          strip_prompt=False, strip_command=False)
 #Sweep range of sizes [n]:
 output += nc.send_command("", expect_string=r"#",
-                                strip_prompt=False, strip_command=False)
+                          strip_prompt=False, strip_command=False)
 #Type escape sequence to abort.
 #Sending 5, 100-byte ICMP Echos to 8.8.8.8, timeout is 2 seconds:
 #!!!!!
