@@ -11,7 +11,7 @@ host =    {
 "fast_cli":False,
 }
 
-nc = ©(**host)
+nc = ConnectHandler(**host)
 
 print(f"Time sending command: {datetime.now().isoformat()}")
 print(nc.send_command("show lldp neighbors detail"))
