@@ -13,7 +13,7 @@ host =    {
 nc = ConnectHandler(**host)
 
 print(f"Time sending command: {datetime.now().isoformat()}")
-print(nc.send_command("show lldp neighbors detail"))
+print(nc.send_command("show lldp neighbors detail", fast_cli=False))
 print(f"Time after command: {datetime.now().isoformat()}")
 
 nc.disconnect()
