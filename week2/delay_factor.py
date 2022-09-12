@@ -17,5 +17,3 @@ print(nc.send_command("show lldp neighbors detail"))
 print(f"Time after command: {datetime.now().isoformat()}")
 
 nc.disconnect()
-
-print(output)
