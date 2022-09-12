@@ -8,12 +8,13 @@ host =    {
 "password": getpass(),
 "device_type" : "cisco_nxos",
 "global_delay_factor": 2,
+"fast_cli":False,
 }
 
-nc = ConnectHandler(**host)
+nc = ©(**host)
 
 print(f"Time sending command: {datetime.now().isoformat()}")
-print(nc.send_command("show lldp neighbors detail", fast_cli=False))
+print(nc.send_command("show lldp neighbors detail"))
 print(f"Time after command: {datetime.now().isoformat()}")
 
 nc.disconnect()
