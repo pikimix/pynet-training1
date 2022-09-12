@@ -14,17 +14,17 @@ host =    {
 nc = ConnectHandler(**host)
 
 before = datetime.now()
-print(f"Time sending command: {before.isoformat()}")
 print(nc.send_command("show lldp neighbors detail"))
 after = datetime.now()
-print(f"Time after command: {after.isoformat()}")
-print(f"Execution time : {after - before}")
-
-before = datetime.now()
-print(f"Time sending long delay command: {before.isoformat()}")
+before_long = datetime.now()
 print(nc.send_command("show lldp neighbors detail", delay_factor=8))
-after = datetime.now()
+after_long = datetime.now()
+
+print(f"Time sending short delay command: {before.isoformat()}")
+print(f"Time after short delay command: {after.isoformat()}")
+print(f"Execution short delay time : {after - before}")
+print(f"Time sending long delay command: {before.isoformat()}")
 print(f"Time after long delay command: {after.isoformat()}")
-print(f"Execution long delay time : {after - before}")
+print(f"Execution long delay time : {after_long - before_long}")
 
 nc.disconnect()
