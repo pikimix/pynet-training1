@@ -11,6 +11,8 @@ host =    {
 
 nc = ConnectHandler(**host)
 
+print(nc.send_command("show lldp neighbors detail"))
+
 nc.disconnect()
 
 print(output)
