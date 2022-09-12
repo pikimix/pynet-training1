@@ -20,4 +20,11 @@ after = datetime.now()
 print(f"Time after command: {after.isoformat()}")
 print(f"Execution time : {after - before}")
 
+before = datetime.now()
+print(f"Time sending long delay command: {before.isoformat()}")
+print(nc.send_command("show lldp neighbors detail", delay_factor=8))
+after = datetime.now()
+print(f"Time after long delay command: {after.isoformat()}")
+print(f"Execution long delay time : {after - before}")
+
 nc.disconnect()
