@@ -18,6 +18,6 @@ print(f"Time sending command: {before.isoformat()}")
 print(nc.send_command("show lldp neighbors detail"))
 after = datetime.now()
 print(f"Time after command: {after.isoformat()}")
-print(f"Execution time : {(after - before).strftime('%S.%f')}")
+print(f"Execution time : {after - before}")
 
 nc.disconnect()
