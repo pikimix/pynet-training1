@@ -31,3 +31,5 @@ output += nc.send_command_timing("", strip_prompt=False, strip_command=False)
 #Success rate is 100 percent (5/5), round-trip min/avg/max = 1/2/4 ms
 #cisco4#
 nc.disconnect()
+
+print(output)
